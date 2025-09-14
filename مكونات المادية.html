@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>اختبار المكونات المادية للحاسوب</title>
+  <style>
+    body { font-family: "Tahoma", sans-serif; background: #f0f8ff; padding: 20px; line-height: 1.8; }
+    h1 { text-align: center; color: #2a4d69; }
+    .question { margin-bottom: 15px; padding: 10px; background: #fff; border-radius: 8px; box-shadow: 0 2px 5px #ccc; }
+    button { padding: 10px 20px; background: #2a9d8f; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #21867a; }
+    #result { font-size: 20px; font-weight: bold; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>💻 اختبار: المكونات المادية للحاسوب</h1>
+  <form id="quizForm">
+
+    <div class="question">
+      1. ما وظيفة وحدة المعالجة المركزية (CPU)؟<br>
+      <input type="radio" name="q1" value="0"> تخزين البيانات<br>
+      <input type="radio" name="q1" value="1"> تنفيذ العمليات الحسابية والمنطقية<br>
+      <input type="radio" name="q1" value="0"> إدخال البيانات
+    </div>
+
+    <div class="question">
+      2. أي من التالي يعد من وحدات الإدخال؟<br>
+      <input type="radio" name="q2" value="0"> الطابعة<br>
+      <input type="radio" name="q2" value="1"> لوحة المفاتيح<br>
+      <input type="radio" name="q2" value="0"> الشاشة
+    </div>
+
+    <div class="question">
+      3. أي من التالي يعتبر ذاكرة مؤقتة؟<br>
+      <input type="radio" name="q3" value="0"> ROM<br>
+      <input type="radio" name="q3" value="1"> RAM<br>
+      <input type="radio" name="q3" value="0"> القرص الصلب
+    </div>
+
+    <div class="question">
+      4. ROM هي اختصار لـ:<br>
+      <input type="radio" name="q4" value="1"> Read Only Memory<br>
+      <input type="radio" name="q4" value="0"> Random Output Memory<br>
+      <input type="radio" name="q4" value="0"> Ready Object Machine
+    </div>
+
+    <div class="question">
+      5. 1024 MB = 1 … ؟<br>
+      <input type="radio" name="q5" value="1"> GB<br>
+      <input type="radio" name="q5" value="0"> TB<br>
+      <input type="radio" name="q5" value="0"> KB
+    </div>
+
+    <div class="question">
+      6. القرص الصلب يعتبر وحدة تخزين.<br>
+      <input type="radio" name="q6" value="1"> صح<br>
+      <input type="radio" name="q6" value="0"> خطأ
+    </div>
+
+    <div class="question">
+      7. أي من وحدات الإخراج التالية تُظهر الصورة فقط؟<br>
+      <input type="radio" name="q7" value="0"> الطابعة<br>
+      <input type="radio" name="q7" value="1"> الشاشة<br>
+      <input type="radio" name="q7" value="0"> السماعات
+    </div>
+
+    <div class="question">
+      8. ما نوع الشاشة التي تعمل بتقنية البلورات السائلة؟<br>
+      <input type="radio" name="q8" value="1"> LCD<br>
+      <input type="radio" name="q8" value="0"> CRT<br>
+      <input type="radio" name="q8" value="0"> LED
+    </div>
+
+    <div class="question">
+      9. USB Flash يعد من وحدات …؟<br>
+      <input type="radio" name="q9" value="0"> الإدخال<br>
+      <input type="radio" name="q9" value="0"> الإخراج<br>
+      <input type="radio" name="q9" value="1"> التخزين
+    </div>
+
+    <div class="question">
+      10. RAM تحتفظ بالبيانات حتى عند إيقاف تشغيل الجهاز.<br>
+      <input type="radio" name="q10" value="0"> صح<br>
+      <input type="radio" name="q10" value="1"> خطأ
+    </div>
+
+    <button type="button" onclick="checkAnswers()">عرض النتيجة</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function checkAnswers() {
+      let score = 0;
+      const form = document.forms['quizForm'];
+      for (let i = 1; i <= 10; i++) {
+        const q = form['q' + i];
+        for (let j = 0; j < q.length; j++) {
+          if (q[j].checked && q[j].value == "1") {
+            score++;
+          }
+        }
+      }
+      document.getElementById("result").innerHTML =
+        "✅ نتيجتك: " + score + " من 10";
+    }
+  </script>
+</body>
+</html>
